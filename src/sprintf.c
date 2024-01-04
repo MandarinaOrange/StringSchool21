@@ -35,12 +35,28 @@ int s21_sprintf(char *buf, const char *format, ...) {
   va_list nachalo;
   va_start(nachalo, format);
 
+  while (*format) {
+    if (*format != '%') {
+      *str = *format;
+      str++;
+      format++;
+    } else {
+      format++;
+      struct Flags flags;
+      Obnull(flags);
+      if (Parsing(&format, &flags) == 1) {
+        printf("ARG!\n");
+      }
+    }
+  }
 
+
+  va_end(nachalo);
 
   return result;
 }
 
-int parsing (const char **format, struct Flags *flags) {
+int Parsing (const char **format, struct Flags *flags) {
   int flag_pars = 0;
 
   while (**format) {
