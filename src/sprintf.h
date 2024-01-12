@@ -16,9 +16,9 @@ struct Flags {
 };
 
 int s21_sprintf(char *buf, const char *format, ...);
-void record_arg(const char **format, char **str, struct Flags *flags, va_list vl);
+//void record_arg(const char **format, char **str, struct Flags *flags, va_list vl);
 void Obnull(struct Flags *flags);
-int parsing (const char **format, struct Flags *flags);
+int Parsing (const char **format, struct Flags *flags);
 int IsDigit(char c);
 int IsSpecifier (char c);
 
