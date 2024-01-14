@@ -1,6 +1,6 @@
 all : sprintf
 
-	gcc sprintf.c test.c -o sprintf
+	gcc sprintf.c sprintf_write.c test.c -o sprintf
 
 clean : 
 
