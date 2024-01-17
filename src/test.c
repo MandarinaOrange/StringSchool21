@@ -36,20 +36,20 @@ int main(int argc, char** argv) {
                 printf("~~~~~~%s\n", buffer);*/
 
 
-                float a;
+                double a;
                 char buff[200];
 
 
 
-                while (a != 909) {
-                    scanf("%f", &a);
+                /*while (a != 909) {
+                    scanf("%lf", &a);
                     printf("number: %f\n", a);
 
                     for (int i = 0; i < 200; i++) {
                         buff[i] = '\0';
                     }
 
-                    printf("%d symbols\nstring: \"%s\"\n\n", sprintf(buff, "%f", a), buff);
+                    printf("%d symbols\nstring: \"%s\"\n\n", sprintf(buff, "%lf", a), buff);
 
                     for (int i = 0; i < 200; i++) {
                         buff[i] = '\0';
@@ -57,7 +57,21 @@ int main(int argc, char** argv) {
 
                     printf("%d symbols\nstring: \"%s\"\n\n", write_double(buff, a, 6), buff);
 
+                }*/
+
+                while (a != 909) {
+                    scanf("%lf", &a);
+                    printf("number: %lf\n", a);
+                    //CifraPosleZpt(12.345 , 2);
+                    //printf("number: %lf\n", a);
+                    for (int i = 1; i < 7; i++) {
+                        printf("цифра %d\n", CifraPosleZpt(&a, i));
+                        
+                    }
                 }
 
+
+
+    return 0;
 
 }

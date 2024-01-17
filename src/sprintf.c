@@ -6,14 +6,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-void record_arg(const char **format, char **str, struct Flags *flags, va_list vl) {
+//void record_arg(const char **format, char **str, struct Flags *flags, va_list vl) {
 
 
 
 
 
 
-}
+//}
 
 void Obnull(struct Flags *flags) {
   flags->length_h = 0;
@@ -37,13 +37,13 @@ int s21_sprintf(char *buf, const char *format, ...) {
 
   while (*format) {
     if (*format != '%') {
-      *str = *format;
-      str++;
+      *buf = *format;
+      buf++;
       format++;
     } else {
       format++;
       struct Flags flags;
-      Obnull(flags);
+      Obnull(&flags);
       if (Parsing(&format, &flags) == 1) {
         printf("ARG!\n");
       }
@@ -61,7 +61,7 @@ int Parsing (const char **format, struct Flags *flags) {
 
   while (**format) {
 
-    if (format == '-') {
+    if (**format == '-') {
       flags->minus = 1;
     } else if (**format == '+') {
       flags->plus = 1;
@@ -114,7 +114,7 @@ int IsDigit(char c) {
 }
 
 int IsSpecifier (char c) {
-  if (ch == 'd' || ch == 'i' || ch == 'c' || ch == 'f' || ch == 's' || ch == 'u' || ch == '%') {
+  if (c == 'd' || c == 'i' || c == 'c' || c == 'f' || c == 's' || c == 'u' || c == '%') {
     return ON;
   }
   return OFF;
