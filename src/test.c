@@ -1,17 +1,19 @@
 #include "sprintf_write.h"
+#include "s21_sprintf.h"
 
 #include  <stdio.h>
 #include <string.h>
 
 
 
+
 int main(int argc, char** argv) {
             
-               char buffer[200];
+               /*char buffer[200];
                int i, j;
                double fp;
                char *s = "computer";
-               char c = '!';
+               char c = '!';*/
                
          
                
@@ -36,9 +38,10 @@ int main(int argc, char** argv) {
                 printf("~~~~~~%s\n", buffer);*/
 
 
-                double a;
+                long double a;
                 char buff[200];
-
+scanf("%Lf", &a);
+printf("OK\n");
 
 
                 /*while (a != 909) {
@@ -59,15 +62,21 @@ int main(int argc, char** argv) {
 
                 }*/
 
-                while (a != 909) {
-                    scanf("%lf", &a);
-                    printf("number: %lf\n", a);
-                    //CifraPosleZpt(12.345 , 2);
-                    //printf("number: %lf\n", a);
-                    for (int i = 1; i < 7; i++) {
-                        printf("цифра %d\n", CifraPosleZpt(&a, i));
-                        
-                    }
+                while (a < 10000) {
+                    scanf("%Lf", &a);
+printf("OK\n");
+                    //printf("number: %f\n", a);
+printf("OK\n");
+
+                    flags f;
+                    f.is_precision = 1;
+                    f.precision = 6;
+                    char res[BUFF];
+                    printf("%Lf\n", a);
+
+printf("OK\n");
+                    int kaka = double_to_string(a, res, f);
+                    printf("number sprintf: %s\n\n", res);
                 }
 
 
