@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-int double_to_string(long double number, char *result, flags f) {
+void double_to_string(long double number, char *result, flags f) {
 
     printf("OK");
     char buffer[BUFF];
